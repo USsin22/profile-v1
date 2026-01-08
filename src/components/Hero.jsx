@@ -60,7 +60,7 @@ const Hero = () => {
           </div>
         </motion.div>
 
-        {/* Visual / Avatar */}
+       
         <motion.div 
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -68,17 +68,17 @@ const Hero = () => {
           className="relative flex justify-center"
         >
           <div className="relative w-72 h-72 lg:w-96 lg:h-96">
-            {/* Background blobs */}
+           
             <div className="absolute -top-4 -left-4 w-72 h-72 bg-secondary/30 rounded-full blur-3xl animate-pulse"></div>
             <div className="absolute -bottom-4 -right-4 w-72 h-72 bg-primary/30 rounded-full blur-3xl animate-pulse delay-700"></div>
             
-            {/* Avatar Container */}
+{/*        
             <div className="w-full h-full rounded-full border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden relative z-10 flex items-center justify-center">
              <Animation />
-            </div>
+            </div> */}
 
-            {/* Floating Badges */}
-            <motion.div 
+           
+            {/* <motion.div 
               animate={{ y: [0, -10, 0] }}
               transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
               className="absolute -right-4 top-10 bg-dark/80 backdrop-blur-md border border-white/10 p-4 rounded-xl shadow-xl z-20"
@@ -92,7 +92,7 @@ const Hero = () => {
               className="absolute -left-4 bottom-20 bg-dark/80 backdrop-blur-md border border-white/10 p-4 rounded-xl shadow-xl z-20"
             >
               <span className="font-bold text-2xl text-secondary">Vite</span>
-            </motion.div>
+            </motion.div> */}
           </div>
         </motion.div>
 
