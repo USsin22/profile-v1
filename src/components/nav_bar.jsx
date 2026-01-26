@@ -1,6 +1,5 @@
 import React from 'react';
 import { Menu, X, Mail } from 'lucide-react';
-import logo from "../assets/logo.png"
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -15,12 +14,12 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-white shadow-md border  rounded-[40px] py-2 px-4 p-[10px ]">
+    <nav className="bg-white shadow-md py-4 px-6">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo/Brand */}
         <div className="flex items-center space-x-2">
-         <img src={logo} alt="logo" className='w-19 h-12' />
-          {/* <span className="text-2xl font-bold text-gray-800">Yassine</span> */}
+          <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full"></div>
+          <span className="text-2xl font-bold text-gray-800">Oliver.</span>
         </div>
 
         {/* Desktop Navigation */}
@@ -29,18 +28,15 @@ const Navbar = () => {
             <a
               key={item.label}
               href={item.href}
-              className="text-gray-600 hover:text-orange-500 transition-colors duration-200 font-medium"
+              className="text-gray-600 hover:text-gray-900 transition-colors duration-200 font-medium"
             >
               {item.label}
             </a>
           ))}
-          <button className='bg-dark text-white px-6 py'>
-            
-          </button>
           
           {/* Contact Button */}
-          <button className="bg-dark text-white px-6 py">
-            {/* <Mail size={18} /> */}
+          <button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-full flex items-center space-x-2 hover:opacity-90 transition-opacity">
+            <Mail size={18} />
             <span>Contact Me</span>
           </button>
         </div>
