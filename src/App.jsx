@@ -10,7 +10,9 @@ import Pricing from "./components/Pricing";
 import Contact from "./components/Contact";
 import LoadingScreen from "./components/LoadingScreen";
 import Testimonials from "./components/Testimonials";
-
+import GlareHover from "./components/GlareHover";
+import CurvedLoop from "./components/CurvedLoop";
+import ScrollStack ,{ScrollStackItem} from "./components/ScrollStackItem";
 // Removed unused logos array for clarity
 
 function App() {
@@ -19,9 +21,20 @@ function App() {
   return (
     <>
       {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
-      <div className="bg-white min-h-screen font-sans selection:text-[#FF451D] selection:bg-[#000] overflow-x-hidden p-4">
+      <div className="bg-white min-h-screen font-sans selection:text-[#FF451D] selection:bg-[#000] overflow-x-hidden ">
         <Navbar />
-        <Hero />
+        {/* <GlareHover>
+          <div className="card">
+
+          </div>
+        </GlareHover> */}
+
+
+          <Hero />
+
+        
+
+
         <ServicesSection />
         <About />
         <FavoriteToolsSection />
