@@ -9,46 +9,46 @@ const Work = () => {
   const comp = useRef(null);
   
   const educationData = [
-    {
-      id: 1,
-      institution: 'Harmony Institute',
-      degree: 'Master in Visual Arts',
-      period: '2018 - 2025'
-    },
-    {
-      id: 2,
-      institution: 'Aurora Academy',
-      degree: 'Bachelor in Visual Arts',
-      period: '2014 - 2016'
-    },
-    {
-      id: 3,
-      institution: 'Crystalbrook',
-      degree: 'High School',
-      period: '2012 - 2014'
-    }
-  ];
+  {
+    id: 1,
+    institution: 'OFPPT – Digital Development',
+    degree: 'Specialized Technician in Digital Development',
+    period: '2023 - Present'
+  },
+  {
+    id: 2,
+    institution: 'Self-Learning & Online Platforms',
+    degree: 'Web Development, UI/UX Design & Product Design',
+    period: '2021 - Present'
+  },
+  {
+    id: 3,
+    institution: 'High School',
+    degree: 'Baccalaureate',
+    period: '2019 - 2021'
+  }
+];
+const workData = [
+  {
+    id: 1,
+    company: 'Only Digital',
+    role: 'Founder & Digital Developer',
+    period: '2024 - Present'
+  },
+  {
+    id: 2,
+    company: 'Freelance',
+    role: 'Web Developer ',
+    period: '2022 - Present'
+  },
+  {
+    id: 3,
+    company: 'Personal Projects & Client Work',
+    role: 'Frontend Developer',
+    period: '2021 - 2022'
+  }
+];
 
-  const workData = [
-    {
-      id: 1,
-      company: 'Insightlancer',
-      role: 'Senior Product Designer',
-      period: '2016 - 2018'
-    },
-    {
-      id: 2,
-      company: 'Self-Employed',
-      role: 'Visual Artist',
-      period: '2014 - 2016'
-    },
-    {
-      id: 3,
-      company: 'KG Graphics Studio',
-      role: 'Web Designer',
-      period: '2012 - 2014'
-    }
-  ];
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -174,12 +174,7 @@ const Work = () => {
           </div>
         </div>
 
-        {/* Optional Footer Note */}
-        <div className="mt-8 text-center work-header-anim">
-          <p className="text-gray-500 text-sm">
-            Continuously learning and growing in the design field since 2012
-          </p>
-        </div>
+        
       </div>
     </section>
   );

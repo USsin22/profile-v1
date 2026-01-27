@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Button = () => {
   return (
-    <div  className='bg-[#fff] flex items-center justify-center p-1 rounded-[1.625rem]'>
+    <div className='bg-[#fff] flex items-center justify-center p-1 rounded-[1.625rem]'>
       {/* First Button (Styled Components) */}
       <StyledWrapper>
         <button className="learn-more">
@@ -15,13 +15,13 @@ const Button = () => {
       </StyledWrapper>
 
       {/* Second Button (Tailwind, updated) */}
-      <button className=" cursor-pointer bg-gradient-to-b bg-[#ff451d]  px-4 py-3 rounded-[1.625rem]  text-white font-medium group">
+      <button className="cursor-pointer bg-gradient-to-b bg-[#ff451d] px-3 py-2 md:px-4 md:py-3 rounded-[1.625rem] text-sm md:text-base text-white font-medium group transition-all duration-300">
         <div className="relative overflow-hidden">
           <p className="group-hover:-translate-y-7 duration-[1.125s] ease-[cubic-bezier(0.19,1,0.22,1)]">
             Hire Me
           </p>
           <p className="absolute top-7 text-center left-0 group-hover:top-0 duration-[1.125s] ease-[cubic-bezier(0.19,1,0.22,1)]">
-              click
+            click
           </p>
         </div>
       </button>

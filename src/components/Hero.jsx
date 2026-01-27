@@ -12,7 +12,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from 'split-type';
 import CurvedLoop from "./CurvedLoop";
-import CircularText from "./CircularText"; 
+import CircularText from "./CircularText";
 
 
 const Hero = () => {
@@ -136,25 +136,60 @@ const Hero = () => {
 
   return (
     <div ref={comp} className="min-h-screen bg-gray-100  flex flex-col py-5 justify-center items-center px-10  font-sans overflow-hidden ">
-      {/* Main container */}
       <div className="max-w-7xl w-full flex flex-col lg:flex-row items-center justify-between gap-12 z-10 relative">
 
-        {/* Left side - Testimonial */}
-        <div className="lg:w-1/4 hero-left">
-          <div className="hero-left-content">
-            <div className="relative mb-6">
-              <span className="text-6xl text-orange-500 font-serif absolute -top-6 -left-2">"</span>
-              <p className="text-xl font-medium text-gray-800 pl-6 italic">
+        {/* Center section with image (Order 1 on mobile, Order 2 on desktop) */}
+        <div className="lg:order-2 lg:w-2/4 flex flex-col items-center order-1 w-full">
+          {/* Heading */}
+          <h1 className="hero-title text-4xl md:text-5xl lg:text-5xl font-bold text-gray-900 text-center mt-8 clip-path-inset">
+            <span className="text-orange-500"> — </span> Hello There!<br />
+            I'm <span className="text-orange-500 text-4xl md:text-3xl lg:text-4xl">Yassine Benhadi</span>
+          </h1>
+          <p className="hero-subtitle text-xl text-gray-600 mt-4 text-center">
+            Full-Stack Developer
+          </p>
+          {/* Orange circle background */}
+          <div className="hero-center-img relative w-72 h-72 md:w-96 md:h-96 mt-6">
+
+
+            {/* Person image area */}
+            <div className="relative w-full h-full">
+              <img
+                src={heroImage}
+                alt="Hero"
+                className="w-full h-full object-contain"
+              />
+
+              {/* Overlay button container */}
+              <div className="absolute inset-0 flex items-start justify-center mt-[250px] md:mt-[330px] z-10">
+                <Button />
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+
+        </div>
+
+        {/* Left side - Testimonial (Order 2 on mobile, Order 1 on desktop) */}
+        <div className="lg:w-1/4 hero-left lg:order-1 order-2 w-full px-4 md:px-0">
+          <div className="hero-left-content text-center lg:text-left">
+            <div className="relative mb-6 inline-block lg:block">
+              <span className="text-6xl text-orange-500 font-serif absolute -top-6 -left-2 hidden lg:block">"</span>
+              <p className="text-xl font-medium text-gray-800 lg:pl-6 italic">
                 Yassine Development Expertise Transformed Our Website — Highly Recommended
               </p>
             </div>
-        <br />
+            <br />
 
-            <div className="mt-8">
+            <div className="mt-8 flex flex-col items-center lg:items-start">
               <div className="flex items-center gap-4 mb-2">
                 <div className="flex -space-x-2">
-                  {[user1, user2, user3, user4].map((img, index) => (
-                    <img key={index} className="w-13 h-10 rounded-full bg-gray-300 border-2 border-white object-cover" src={img} alt={`User ${index + 1}`} />
+                  {[user1, user2, user4].map((img, index) => (
+                    <img key={index} className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gray-300 border-2 border-white object-cover" src={img} alt={`User ${index + 1}`} />
                   ))}
                 </div>
                 <div>
@@ -169,49 +204,13 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Center section with image */}
-        <div className="lg:w-2/4 flex flex-col items-center">
-          {/* Heading */}
-          <h1 className="hero-title text-3xl lg:text-5xl font-bold text-gray-900 text-center mt-8 clip-path-inset">
-            <span className="text-orange-500"> — </span> Hello There!<br />
-            I'm <span className="text-orange-500">Yassine Benhadi</span>
-          </h1>
-          <p className="hero-subtitle text-xl text-gray-600 mt-4">
-            Full-Stack Developer
-          </p>
-          {/* Orange circle background */}
-          <div className="hero-center-img relative w-96 h-96">
-
-
-            {/* Person image area */}
-            <div className="relative w-full h-full">
-              <img
-                src={heroImage}
-                alt="Hero"
-                className="w-full h-full object-contain"
-              />
-
-              {/* Overlay button container */}
-              <div className="absolute inset-0 flex items-start justify-center mt-[330px] z-10">
-                <Button />
-              </div>
-
-            </div>
-
-          </div>
-
-
-
-
-        </div>
-
-        {/* Right side - Skills & Social */}
-        <div className="lg:w-1/4">
+        {/* Right side - Skills & Social (Order 3 on mobile, Order 3 on desktop) */}
+        <div className="lg:w-1/4 lg:order-3 order-3 w-full px-4 md:px-0">
 
           {/* <CircularText text="HIRE ME✦HIRE ME✦" /> */}
-<br />
+          <br />
           {/* Skills tags */}
-          <div className="flex flex-wrap gap-3 justify-end mb-8">
+          <div className="flex flex-wrap gap-3 justify-center lg:justify-end mb-8">
             {skills.map((skill, index) => (
               <span
                 key={index}
@@ -224,10 +223,10 @@ const Hero = () => {
 
 
           {/* Social icons */}
-        
-          <div className="relative">
-            <span className="text-gray-600 text-sm font-medium right-0">Follow as on</span>
-            <div className="flex gap-4 justify-end">
+
+          {/* <div className="relative flex flex-col items-center lg:items-end">
+            <span className="text-gray-600 text-sm font-medium mb-2">Follow as on</span>
+            <div className="flex gap-4 justify-center lg:justify-end">
               {socialIcons.map((socialIcon) => (
                 <a
                   key={socialIcon.platform}
@@ -240,7 +239,7 @@ const Hero = () => {
               ))}
 
             </div>
-          </div>
+          </div> */}
 
         </div>
       </div>
