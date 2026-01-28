@@ -1,5 +1,5 @@
 import React, { useState, useLayoutEffect, useRef } from 'react';
-// import { Send, MapPin, Phone, Clock, Mail, Flower2, Facebook, Twitter, Instagram, Youtube, Pinterest } from 'lucide-react';
+import { FaPaperPlane, FaMapMarkerAlt, FaPhoneAlt, FaClock, FaEnvelope, FaAsterisk, FaFacebookF, FaTwitter, FaInstagram, FaYoutube, FaPinterestP } from 'react-icons/fa';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -49,18 +49,18 @@ const Contact = () => {
         duration: 0.8,
         ease: "power3.out"
       })
-      .from(".contact-form", {
-        x: -50,
-        opacity: 0,
-        duration: 1,
-        ease: "power3.out"
-      }, "-=0.4")
-      .from(".contact-info", {
-        x: 50,
-        opacity: 0,
-        duration: 1,
-        ease: "power3.out"
-      }, "-=0.8");
+        .from(".contact-form", {
+          x: -50,
+          opacity: 0,
+          duration: 1,
+          ease: "power3.out"
+        }, "-=0.4")
+        .from(".contact-info", {
+          x: 50,
+          opacity: 0,
+          duration: 1,
+          ease: "power3.out"
+        }, "-=0.8");
     }, comp);
     return () => ctx.revert();
   }, []);
@@ -68,7 +68,7 @@ const Contact = () => {
   return (
     <section ref={comp} className="py-16 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Header - Centered */}
         <div className="contact-header text-center mb-12">
           <div className="flex items-center justify-center gap-3 mb-4">
@@ -77,19 +77,19 @@ const Contact = () => {
               CONTACT ME
             </span>
           </div>
-          
+
           <div className="flex items-center justify-center gap-3">
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
               Let's Talk for{' '}
               <span className="text-[#FF451D] italic">Your Next Projects</span>
             </h1>
-            {/* <Flower2 className="w-7 h-7 text-[#FF451D]" /> */}
+            <FaAsterisk className="w-6 h-6 text-[#FF451D]" />
           </div>
         </div>
 
         {/* Two Column Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-          
+
           {/* Left Side - Contact Form */}
           <div className="contact-form">
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -226,7 +226,7 @@ const Contact = () => {
                 type="submit"
                 className="w-full bg-[#FF451D] text-white font-semibold py-4 px-6 rounded-lg hover:bg-orange-600 transition-colors flex items-center justify-center gap-2"
               >
-                {/* <Send className="w-5 h-5" /> */}
+                <FaPaperPlane className="w-5 h-5" />
                 Send Message
               </button>
             </form>
@@ -241,7 +241,7 @@ const Contact = () => {
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-[#FF451D] rounded-full flex items-center justify-center">
-                      {/* <MapPin className="w-5 h-5" /> */}
+                      <FaMapMarkerAlt className="w-5 h-5 text-white" />
                     </div>
                     <h3 className="text-[#FF451D] font-bold text-xl">Address</h3>
                   </div>
@@ -256,17 +256,17 @@ const Contact = () => {
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-[#FF451D] rounded-full flex items-center justify-center">
-                      {/* <Phone className="w-5 h-5" /> */}
+                      <FaPhoneAlt className="w-5 h-5 text-white" />
                     </div>
                     <h3 className="text-[#FF451D] font-bold text-xl">Contact</h3>
                   </div>
                   <div className="space-y-2 pl-13">
                     <p className="text-gray-300 flex items-center gap-2">
-                      {/* <Mail className="w-4 h-4" /> */}
+                      <FaEnvelope className="w-4 h-4" />
                       hello@oliverscott.design
                     </p>
                     <p className="text-gray-300 flex items-center gap-2">
-                      {/* <Phone className="w-4 h-4" /> */}
+                      <FaPhoneAlt className="w-4 h-4" />
                       (555) 123-4567
                     </p>
                   </div>
@@ -276,7 +276,7 @@ const Contact = () => {
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-[#FF451D] rounded-full flex items-center justify-center">
-                      {/* <Clock className="w-5 h-5" /> */}
+                      <FaClock className="w-5 h-5 text-white" />
                     </div>
                     <h3 className="text-[#FF451D] font-bold text-xl">Time</h3>
                   </div>
@@ -290,42 +290,42 @@ const Contact = () => {
               </div>
 
               {/* Footer - Stay Connected */}
-              <div 
+              <div
                 className="pt-10 pb-6 px-8 lg:px-10 relative overflow-hidden"
                 style={{ backgroundImage: wavePattern, backgroundSize: '100% 100%', backgroundPosition: 'top' }}
               >
                 <div className="relative z-10">
                   <h4 className="text-white font-bold text-lg mb-4">Stay Connected</h4>
                   <div className="flex items-center gap-3">
-                    <a 
-                      href="#" 
+                    <a
+                      href="#"
                       className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:scale-110 transition-transform"
                     >
-                      {/* <Facebook className="w-5 h-5 text-black" /> */}
+                      <FaFacebookF className="w-5 h-5 text-black" />
                     </a>
-                    <a 
-                      href="#" 
+                    <a
+                      href="#"
                       className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:scale-110 transition-transform"
                     >
-                      {/* <Twitter className="w-5 h-5 text-black" /> */}
+                      <FaTwitter className="w-5 h-5 text-black" />
                     </a>
-                    <a 
-                      href="#" 
+                    <a
+                      href="#"
                       className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:scale-110 transition-transform"
                     >
-                      {/* <Pinterest className="w-5 h-5 text-black" /> */}
+                      <FaPinterestP className="w-5 h-5 text-black" />
                     </a>
-                    <a 
-                      href="#" 
+                    <a
+                      href="#"
                       className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:scale-110 transition-transform"
                     >
-                      {/* <Instagram className="w-5 h-5 text-black" /> */}
+                      <FaInstagram className="w-5 h-5 text-black" />
                     </a>
-                    <a 
-                      href="#" 
+                    <a
+                      href="#"
                       className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:scale-110 transition-transform"
                     >
-                      {/* <Youtube className="w-5 h-5 text-black" /> */}
+                      <FaYoutube className="w-5 h-5 text-black" />
                     </a>
                   </div>
                 </div>
