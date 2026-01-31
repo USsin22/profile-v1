@@ -48,14 +48,14 @@ export const ThreeDMarquee = ({
 
     return (
         <section
-            className={`relative mx-auto block h-[600px] max-sm:h-[400px] 
+            className={`relative bg-[#fff] mx-auto block h-[600px] max-sm:h-[400px] 
         overflow-hidden rounded-3xl ${className}`}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
             {/* Optional gradient overlay */}
             {showOverlay && (
-                <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#0A0C10]/80 via-transparent to-[#0A0C10]/80 pointer-events-none" />
+                <div className="absolute inset-0 z-10 via-transparent to-white/90 pointer-events-none" />
             )}
 
             <div
@@ -67,27 +67,24 @@ export const ThreeDMarquee = ({
                         : "rotateX(55deg) rotateY(0deg) rotateZ(45deg)",
                 }}
             >
-                <div className="w-full h-full overflow-x-auto overflow-y-hidden scroll-smooth scrollbar-hide scale-90 sm:scale-110">
+                <div className="w-full h-full overflow-hidden scale-90 sm:scale-110">
                     <div
-                        className={`relative flex sm:grid h-full w-fit sm:w-full origin-center 
+                        className={`relative flex sm:grid h-full w-full origin-center 
               grid-cols-2 sm:grid-cols-${Math.min(cols, 4)} gap-4 sm:gap-8 whitespace-nowrap`}
                     >
                         {imageGroups.map((imagesInGroup, idx) => (
                             <motion.div
                                 key={`column-${idx}`}
                                 animate={{
-                                    y: idx % 2 === 0 ? 100 : -100,
-                                    transition: {
-                                        duration: idx % 2 === 0 ? 25 / speed : 30 / speed,
-                                        repeat: Infinity,
-                                        repeatType: "loop",
-                                        ease: "linear",
-                                    }
+                                    y: idx % 2 === 0 ? ["0%", "-50%"] : ["-50%", "0%"],
+                                }}
+                                transition={{
+                                    duration: (30 / speed) * (idx % 2 === 0 ? 1 : 1.2),
+                                    repeat: Infinity,
+                                    repeatType: "loop",
+                                    ease: "linear",
                                 }}
                                 className="flex flex-col items-center gap-4 sm:gap-8 relative"
-                                style={{
-                                    animationPlayState: pauseOnHover && isHovered ? "paused" : "running"
-                                }}
                             >
                                 {/* Vertical divider line - Subtle for dark theme */}
                                 <div className="absolute left-0 top-0 h-full w-[1px] bg-gradient-to-b from-transparent via-gray-700/30 to-transparent" />
@@ -129,7 +126,7 @@ export const ThreeDMarquee = ({
                                                 />
 
                                                 {/* Hover Glow */}
-                                                <div className="absolute inset-0 bg-gradient-to-tr from-[#FF451D]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                                                <div className="absolute inset-0 bg-gradient-to-tr from-[#8b5cf6]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                                                 {/* Hover overlay with info */}
                                                 {(image.title || image.description) && (
